@@ -1,0 +1,45 @@
+#spring配置
+spring:
+  #1.应用配置
+  application:
+    name: ihrm-audit #指定服务名
+  #2.数据库连接池
+  datasource:
+
+      url: jdbc:mysql://localhost:3306/act?useUnicode=true&characterEncoding=utf8&useSSL=true
+      username : root
+      password : LYZhi0806
+      driver-class-name: com.mysql.jdbc.Driver
+#    ihrm:
+#      url: jdbc:mysql://localhost:3306/ihrm?useUnicode=true&characterEncoding=utf8&useSSL=true
+#      username : root
+#      password : LYZhi0806
+#      driver-class-name: com.mysql.jdbc.Driver
+  redis:
+    host: 116.62.26.142
+    port: 6379
+  #3.JPA
+  jpa:
+    database: MySQL
+    show-sql: true
+    open-in-view: true
+  activiti:
+    history-level: full
+    db-history-used: true
+server:
+  port: 10888
+
+
+
+######################dubbo##################
+# Dubbo Protocol 提供服务的名字和端口
+dubbo:
+  protocol:
+    serialization: kryo
+    name: dubbo
+    port: 12344
+  ## Dubbo Registry 注册中心的地址
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    register: true
+
