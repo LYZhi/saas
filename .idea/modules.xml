@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ihrm-api/ihrm-api.iml" filepath="$PROJECT_DIR$/ihrm-api/ihrm-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm-attendance/ihrm-attendance.iml" filepath="$PROJECT_DIR$/ihrm-attendance/ihrm-attendance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm-audit/ihrm-audit.iml" filepath="$PROJECT_DIR$/ihrm-audit/ihrm-audit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm-company/ihrm-company.iml" filepath="$PROJECT_DIR$/ihrm-company/ihrm-company.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm-employee/ihrm-employee.iml" filepath="$PROJECT_DIR$/ihrm-employee/ihrm-employee.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm-gate/ihrm-gate.iml" filepath="$PROJECT_DIR$/ihrm-gate/ihrm-gate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm-salarys/ihrm-salarys.iml" filepath="$PROJECT_DIR$/ihrm-salarys/ihrm-salarys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm-social-securitys/ihrm-social-securitys.iml" filepath="$PROJECT_DIR$/ihrm-social-securitys/ihrm-social-securitys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ihrm-system/ihrm-system.iml" filepath="$PROJECT_DIR$/ihrm-system/ihrm-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/parent-demo.iml" filepath="$PROJECT_DIR$/parent-demo.iml" />
+    </modules>
+  </component>
+</project>

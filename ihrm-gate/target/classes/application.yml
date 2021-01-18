@@ -1,0 +1,78 @@
+server:
+  port: 9090
+#spring配置
+spring:
+  application:
+    name: ihrm-gate
+  cloud:
+    gateway:
+      routes:
+        - id: ihrm-company
+          uri: http://localhost:9001
+          predicates:
+            - Path= /company/**
+          filters:
+            - StripPrefix=0
+        - id: ihrm-system
+          uri: http://localhost:9002
+          predicates:
+            - Path= /sys/**
+          filters:
+            - StripPrefix=0
+        - id: ihrm-employee
+          uri: http://localhost:9003
+          predicates:
+            - Path= /employees/**
+          filters:
+            - StripPrefix=0
+        - id: ihrm-social-securitys
+          uri: http://localhost:9004
+          predicates:
+            - Path= /social_securitys/**
+          filters:
+            - StripPrefix=0
+        - id: ihrm-atte-cfg
+          uri: http://localhost:9005
+          predicates:
+            - Path= /cfg/**
+          filters:
+            - StripPrefix=0
+        - id: ihrm-salarys
+          uri: http://localhost:9006
+          predicates:
+            - Path= /salarys/**
+          filters:
+            - StripPrefix=0
+        - id: ihrm-user-audit
+          uri: http://localhost:10888
+          predicates:
+            - Path= /user/**
+          filters:
+            - StripPrefix=0
+
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+          isolation:
+            thread:
+              timeoutInMilliseconds: 240000
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+######################dubbo##################
+# Dubbo Protocol 提供服务的名字和端口
+dubbo:
+  protocol:
+    serialization: kryo
+    name: dubbo
+    port: 12340
+  ## Dubbo Registry 注册中心的地址
+  registry:
+    address: zookeeper://127.0.0.1:2181
+    register: true
+
