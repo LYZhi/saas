@@ -1,5 +1,6 @@
 package com.zxc.employee.controller;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.zxc.common.controller.BaseController;
 import com.zxc.common.entity.PageResult;
@@ -8,7 +9,9 @@ import com.zxc.common.entity.ResultCode;
 import com.zxc.common.poi.ExcelExportUtil;
 import com.zxc.common.utils.BeanMapUtils;
 import com.zxc.common.utils.DownloadUtils;
+import com.zxc.inters.CompanyInter;
 import com.zxc.inters.EmployeeInter;
+import com.zxc.inters.SystemInter;
 import com.zxc.model.employee.*;
 import com.zxc.model.employee.response.EmployeeReportResult;
 import com.zxc.employee.service.*;
@@ -29,7 +32,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 
 @Service(version = "1.0.0")
 @RestController
@@ -76,7 +78,6 @@ public class EmployeeController extends BaseController implements EmployeeInter 
 
         //3.填充pdf模版数据,并输出pdf
         Map params = new HashMap();
-
 
         Map<String, Object> personalMap = BeanMapUtils.beanToMap(personal);
         Map<String, Object> jobsMap = BeanMapUtils.beanToMap(jobs);
@@ -161,6 +162,7 @@ public class EmployeeController extends BaseController implements EmployeeInter 
     @RequestMapping(value = "/{id}/leave", method = RequestMethod.PUT)
     public Result saveLeave(@PathVariable(name = "id") String uid, @RequestBody EmployeeResignation resignation) throws Exception {
         resignation.setUserId(uid);
+
         resignationService.save(resignation);
         return new Result(ResultCode.SUCCESS);
     }
@@ -270,7 +272,6 @@ public class EmployeeController extends BaseController implements EmployeeInter 
         //2.加载模版
         Resource resource = new ClassPathResource("excel-template/hr-demo.xlsx");
         FileInputStream fis = new FileInputStream(resource.getFile());
-
 
         //3.通过工具类下载文件
         new ExcelExportUtil(EmployeeReportResult.class , 2, 2)

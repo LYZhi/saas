@@ -1,5 +1,6 @@
 server:
   port: 9090
+
 #spring配置
 spring:
   application:
@@ -8,47 +9,62 @@ spring:
     gateway:
       routes:
         - id: ihrm-company
+#          uri: http://116.62.26.142:9001
           uri: http://localhost:9001
           predicates:
             - Path= /company/**
           filters:
             - StripPrefix=0
+
         - id: ihrm-system
-          uri: http://localhost:9002
+#          uri: http://localhost:9002
+          uri: http://sysz.cn1.utools.club
           predicates:
             - Path= /sys/**
           filters:
             - StripPrefix=0
+
         - id: ihrm-employee
-          uri: http://localhost:9003
+#          uri: http://116.62.26.142:9004
+          uri: http://localhost:9004
           predicates:
             - Path= /employees/**
           filters:
             - StripPrefix=0
+
         - id: ihrm-social-securitys
-          uri: http://localhost:9004
+#          uri: http://localhost:9003
+          uri: http://socialz.cn1.utools.club
           predicates:
             - Path= /social_securitys/**
           filters:
             - StripPrefix=0
+
         - id: ihrm-atte-cfg
           uri: http://localhost:9005
           predicates:
-            - Path= /cfg/**
+            - Path= /attendances/**
           filters:
             - StripPrefix=0
+
         - id: ihrm-salarys
-          uri: http://localhost:9006
+#          uri: http://localhost:9009
+          uri: http://salarysz.cn1.utools.club
           predicates:
             - Path= /salarys/**
           filters:
             - StripPrefix=0
-        - id: ihrm-user-audit
-          uri: http://localhost:10888
-          predicates:
-            - Path= /user/**
-          filters:
-            - StripPrefix=0
+
+#        - id: ihrm-user-audit
+#          uri: http://localhost:10888
+#          predicates:
+#            - Path= /user/**
+#          filters:
+#            - StripPrefix=0
+
+      default-filters:
+        - DedupeResponseHeader=Vary Access-Control-Allow-Credentials Access-Control-Allow-Origin, RETAIN_UNIQUE
+        - DedupeResponseHeader=Access-Control-Allow-Origin, RETAIN_FIRST
 
 hystrix:
   command:
@@ -61,7 +77,7 @@ hystrix:
               timeoutInMilliseconds: 240000
 
   redis:
-    host: 127.0.0.1
+    host: 116.62.26.142
     port: 6379
 
 ######################dubbo##################
@@ -70,9 +86,10 @@ dubbo:
   protocol:
     serialization: kryo
     name: dubbo
-    port: 12340
+    port: 12346
   ## Dubbo Registry 注册中心的地址
   registry:
-    address: zookeeper://127.0.0.1:2181
+#    address: zookeeper://127.0.0.1:2181
+    address: zookeeper://116.62.26.142:2181,116.62.26.142:2182,116.62.26.142:2183
     register: true
 

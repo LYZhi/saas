@@ -4,10 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
-/**
- * @author: hyl
- * @date: 2020/03/13
- **/
 @SpringBootApplication
 public class
 GateApplication {

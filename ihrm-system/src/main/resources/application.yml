@@ -9,13 +9,13 @@ spring:
   #2.数据库连接池
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ihrm?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://116.62.26.142:3306/ihrm?serverTimezone=GMT&useUnicode=true&characterEncoding=utf8&useSSL=false
     username: root
-    password: LYZhi0806
+    password: LYZhi0806!
     hikari:
       maximum-pool-size: 2
   redis:
-    host: 127.0.0.1
+    host: 116.62.26.142
     port: 6379
   #3.JPA
   jpa:
@@ -32,13 +32,13 @@ my:
   secretKey: yf1GusMvvLBdOnyubfLubNyod9iEDEZW
   imageType: BASE64
   groupId: itcast
-  url: http://localhost:8080/#/facelogin
+  url: http://116.62.26.142:8080/#/facelogin
 
 #################dubbo#########################
 # Dubbo Registry 注册中心的地址
 dubbo:
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: zookeeper://116.62.26.142:2181
     register: true
   application:
     name: ihrm-system
@@ -46,6 +46,8 @@ dubbo:
     serialization: kryo
     name: dubbo
     port: 12341
+  consumer:
+    timeout: 30000
     ## Dubbo
     #dubbo.registry.address= zookeeper://127.0.0.1:2181
 #    dubbo.application.name= dubbo-auto-configure-consumer-sample

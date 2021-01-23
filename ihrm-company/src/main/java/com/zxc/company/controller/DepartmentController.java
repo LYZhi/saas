@@ -58,6 +58,7 @@ public class DepartmentController extends BaseController implements DepartmentIn
         department.setId(id);
         //2.调用service更新
         departmentService.update(department);
+
         return new Result(ResultCode.SUCCESS);
     }
 

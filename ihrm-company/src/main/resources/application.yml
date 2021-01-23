@@ -27,9 +27,11 @@ dubbo:
     serialization: kryo
     name: dubbo
     port: 12340
+  consumer:
+    timeout: 30000
   ## Dubbo Registry 注册中心的地址
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: zookeeper://116.62.26.142:2181,116.62.26.142:2182,116.62.26.142:2183
     register: true
 
 

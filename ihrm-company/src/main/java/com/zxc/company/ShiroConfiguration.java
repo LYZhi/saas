@@ -17,10 +17,6 @@ import org.springframework.context.annotation.Configuration;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-/**
- * @author: hyl
- * @date: 2020/02/04
- **/
 @Configuration(value = "ihrm_company")
 public class ShiroConfiguration {
 
@@ -64,12 +60,21 @@ public class ShiroConfiguration {
         //4.设置过滤器集合
         Map<String,String> filterMap = new LinkedHashMap<>();
 
+        filterMap.put("/swagger-ui.html", "anon");
+        filterMap.put("/swagger-resources/**", "anon");
+        filterMap.put("/v2/api-docs/**", "anon");
+        filterMap.put("/webjars/springfox-swagger-ui/**", "anon");
+        filterMap.put("/swagger/**","anon");
+        filterMap.put("/public/**","anon");
+        filterMap.put("/static/**","anon");
+
         //anno -- 匿名访问
         filterMap.put("/autherror" , "anon");
         //用于提供给feign使用
-        filterMap.put("/company/**" , "anon");
+//        filterMap.put("/company/**" , "anon");
         //authc -- 认证之后访问(登录)
         filterMap.put("/**" , "authc");
+
 
         filterFactory.setFilterChainDefinitionMap(filterMap);
         

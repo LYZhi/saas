@@ -57,6 +57,16 @@ public class ShiroConfiguration {
         filterFactory.setUnauthorizedUrl("/autherror?code=2");//未授权的url
         //4.设置过滤器集合
         Map<String,String> filterMap = new LinkedHashMap<>();
+
+        filterMap.put("/swagger-ui.html", "anon");
+        filterMap.put("/swagger-resources/**", "anon");
+        filterMap.put("/v2/api-docs/**", "anon");
+        filterMap.put("/webjars/springfox-swagger-ui/**", "anon");
+        filterMap.put("/swagger/**","anon");
+        filterMap.put("/public/**","anon");
+        filterMap.put("/static/**","anon");
+
+
         //anon -- 匿名访问
         filterMap.put("/sys/login","anon");
         filterMap.put("/swagger-ui","anon");

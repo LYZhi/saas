@@ -69,7 +69,7 @@ public class AtteService  {
                 Attendance atte = attendanceDao.findByUserIdAndDay(user.getId(), day);
                 if (atte == null){
                     atte = new Attendance();
-                    atte.setAdtStatu(2);    //旷工
+                    atte.setAdtStatu(1);    //旷工
                     atte.setId(user.getId());
                     atte.setDay(day);
                 }

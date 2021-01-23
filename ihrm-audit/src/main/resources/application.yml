@@ -6,9 +6,9 @@ spring:
   #2.数据库连接池
   datasource:
 
-      url: jdbc:mysql://localhost:3306/act?useUnicode=true&characterEncoding=utf8&useSSL=true
+      url: jdbc:mysql://116.62.26.142:3306/act?useUnicode=true&characterEncoding=utf8&useSSL=true
       username : root
-      password : LYZhi0806
+      password : LYZhi0806!
       driver-class-name: com.mysql.jdbc.Driver
 #    ihrm:
 #      url: jdbc:mysql://localhost:3306/ihrm?useUnicode=true&characterEncoding=utf8&useSSL=true
@@ -40,6 +40,6 @@ dubbo:
     port: 12344
   ## Dubbo Registry 注册中心的地址
   registry:
-    address: zookeeper://127.0.0.1:2181
+    address: zookeeper://116.62.26.142:2181
     register: true
 

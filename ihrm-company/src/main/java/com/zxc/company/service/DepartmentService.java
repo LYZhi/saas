@@ -39,6 +39,8 @@ public class DepartmentService extends BaseService {
         dept.setCode(department.getCode());
         dept.setIntroduce(department.getIntroduce());
         dept.setName(department.getName());
+        dept.setManager(department.getManager());
+
         //3.更新部门
         departmentDao.save(dept);
     }

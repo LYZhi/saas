@@ -11,9 +11,9 @@ spring:
   #2.数据库连接池
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ihrm?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT
+    url: jdbc:mysql://116.62.26.142:3306/ihrm?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=GMT
     username: root
-    password: LYZhi0806
+    password: LYZhi0806!
     hikari:
       maximum-pool-size: 2
   redis:
@@ -22,3 +22,15 @@ spring:
 #服务配置
 server:
   port: 9009
+
+######################dubbo##################
+# Dubbo Protocol 提供服务的名字和端口
+dubbo:
+  protocol:
+    serialization: kryo
+    name: dubbo
+    port: 12347
+  ## Dubbo Registry 注册中心的地址
+  registry:
+    address: zookeeper://116.62.26.142:2181
+    register: true

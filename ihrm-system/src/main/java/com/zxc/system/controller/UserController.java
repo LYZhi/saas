@@ -146,6 +146,7 @@ public class UserController extends BaseController implements SystemInter {
     /**
      * 修改User
      */
+
     @RequestMapping(value = "/user/{id}" , method = RequestMethod.PUT)
     public Result update(@PathVariable(value = "id") String id , @RequestBody User user){
         //调用Service更新
@@ -192,7 +193,7 @@ public class UserController extends BaseController implements SystemInter {
             }
             //构造登录令牌
             password = new Md5Hash(password , mobile , 3).toString();
-            System.out.println("======================"+password);
+//            System.out.println("======================"+password);
             UsernamePasswordToken upToken = new UsernamePasswordToken(mobile , password);
             //获取subject
             Subject subject = SecurityUtils.getSubject();

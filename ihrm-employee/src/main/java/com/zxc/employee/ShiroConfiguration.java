@@ -67,6 +67,16 @@ public class ShiroConfiguration {
          */
         Map<String,String> filterMap = new LinkedHashMap<String,String>();
         //配置请求连接过滤器配置
+
+        filterMap.put("/swagger-ui.html", "anon");
+        filterMap.put("/swagger-resources/**", "anon");
+        filterMap.put("/v2/api-docs/**", "anon");
+        filterMap.put("/webjars/springfox-swagger-ui/**", "anon");
+        filterMap.put("/swagger/**","anon");
+        filterMap.put("/public/**","anon");
+        filterMap.put("/static/**","anon");
+
+
         //匿名访问（所有人员可以使用）
         filterMap.put("/sys/login", "anon");
         filterMap.put("/autherror", "anon");

@@ -40,7 +40,7 @@
       <module name="ihrm-gate" options="-parameters" />
       <module name="ihrm-salarys" options="-parameters" />
       <module name="ihrm-social-securitys" options="-parameters" />
-      <module name="ihrm-system" options="-parameters -verbose -bootclasspath /usr/local/jdk1.8.0_161/jre/lib/rt.jar;/usr/local/jdk1.8.0_161/jre/lib/jce.jar" />
+      <module name="ihrm-system" options="-parameters -verbose -bootclasspath /usr/local/jdk1.8.0_161/jre/lib/rt.jar:/usr/local/jdk1.8.0_161/jre/lib/jce.jar" />
     </option>
   </component>
 </project>

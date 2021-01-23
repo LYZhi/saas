@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/cfg")
+@RequestMapping("/attendances/cfg")
 public class ConfigController extends BaseController {
 
     @Autowired

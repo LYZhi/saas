@@ -5,6 +5,7 @@ import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.sun.org.apache.xml.internal.security.utils.Base64;
+//import org.apache.shiro.codec.Base64;
 import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;

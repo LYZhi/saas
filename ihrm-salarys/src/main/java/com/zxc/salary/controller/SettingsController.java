@@ -8,9 +8,6 @@ import com.zxc.salary.service.SettingsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-/*
- *	津贴controller
- */
 @CrossOrigin
 @RestController
 @RequestMapping(value = "/salarys")

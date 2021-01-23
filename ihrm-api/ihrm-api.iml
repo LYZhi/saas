@@ -13,7 +13,10 @@
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="entityManagerFactory" />
+          <factory-entry name="ihrm-api" />
+        </datasource-mapping>
         <naming-strategy-map />
       </configuration>
     </facet>
@@ -32,6 +35,8 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="lib (2)" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-web:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.3.0.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.3.0.RELEASE" level="project" />
@@ -217,6 +222,5 @@
     <orderEntry type="library" name="Maven: org.javassist:javassist:3.20.0-GA" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-all:4.1.49.Final" level="project" />
     <orderEntry type="library" name="Maven: org.yaml:snakeyaml:1.26" level="project" />
-    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>
